@@ -2,16 +2,29 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-server',
+    styles:[`
+        .online{ 
+            color: white;
+        }
+    `],
     templateUrl: './server.component.html'
 })
 
 export class ServerComponent {
-    multOne: number = 10;
-    multTwo: string = 'Teste';
+    serverId = 10;
+    serverStatus = 'offline';
+    
 
-    getServerStatus(){
-        return (this.multOne * 2);
+    constructor (){
+            this.serverStatus = (Math.random() > 0.5) ? 'offline' : 'online';
     }
 
+    getServerStatus(){
 
+   
+    }
+
+    getColor(){
+        return this.serverStatus === 'online' ? 'green' : 'red';
+    }
 }

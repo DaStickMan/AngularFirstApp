@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 export class ServerComponent {
     multOne: number = 10;
     multTwo: string = 'Teste';
+
+    getServerStatus(){
+        return (this.multOne * 2);
+    }
+
+
 }
